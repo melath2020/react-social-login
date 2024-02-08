@@ -20,7 +20,7 @@ const Login = () => {
     console.log('Login Failed');
   }}
 />;
-                <button className='google-btn'>Login With Google</button>
+            
             </div>
           
         </div>
