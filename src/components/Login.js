@@ -3,7 +3,7 @@ import './loginstyle.css'
 import { GoogleLogin } from '@react-oauth/google';
 import { googleLogout } from '@react-oauth/google';
 const Login = () => {
- const [Success, setSuccess] = useState()
+ const [Success, setSuccess] = useState(false)
   return (
     <div>
         <div class="container box-width shadow-sm pb-5" >
@@ -29,7 +29,7 @@ const Login = () => {
 />;
     </div>
     <div className="col-md-6">
-        {Success ? <>   <button onClick={()=>googleLogout()}>LogOut</button></>:null}
+          <button onClick={()=>googleLogout()}>LogOut</button>
 
     </div>
 </div>
