@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './loginstyle.css'
 import { GoogleLogin } from '@react-oauth/google';
+import { googleLogout } from '@react-oauth/google';
 const Login = () => {
+ const [Success, setSuccess] = useState()
   return (
     <div>
         <div class="container box-width shadow-sm pb-5" >
@@ -12,14 +14,25 @@ const Login = () => {
                     <input type="text" className='form-control mt-3' placeholder='Password'/>
                 </div>
                 <hr />
-                <GoogleLogin
+<div className="row">
+    <div className="col-md-6">
+    <GoogleLogin
   onSuccess={credentialResponse => {
+
     console.log(credentialResponse);
+    setSuccess(credentialResponse)
+    alert("Login Success")
   }}
   onError={() => {
     console.log('Login Failed');
   }}
 />;
+    </div>
+    <div className="col-md-6">
+        {Success ? <>   <button onClick={()=>googleLogout()}>LogOut</button></>:null}
+
+    </div>
+</div>
             
             </div>
           
