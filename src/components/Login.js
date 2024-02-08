@@ -11,7 +11,7 @@ const Login = () => {
   }, [Logout]);
   return (
     <div>
-      <div class="container box-width shadow-sm pb-5">
+      <div class="container box-width shadow-sm pb-2">
         <div className="text-center">
           <h5 className="mt-5 pt-3 mb-3">Login Here</h5>
           <div className="box bg-light-50  p-2 ">
@@ -26,10 +26,11 @@ const Login = () => {
               placeholder="Password"
             />
           </div>
+          <button className="btn-log mt-3">Login</button>
           <hr />
     
-           
-              <GoogleLogin
+           <div className="text-center">
+           <GoogleLogin 
                 onSuccess={(credentialResponse) => {
                   console.log(credentialResponse);
                   setSuccess(credentialResponse);
@@ -39,6 +40,8 @@ const Login = () => {
                   console.log("Login Failed");
                 }}
               />
+           </div>
+            
               ;
             </div>
             
