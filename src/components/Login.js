@@ -30,7 +30,7 @@ const Login = () => {
           <hr />
     
            <div className="text-center">
-           <GoogleLogin 
+           <GoogleLogin className="w-100"
                 onSuccess={(credentialResponse) => {
                   console.log(credentialResponse);
                   setSuccess(credentialResponse);
