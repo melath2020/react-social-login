@@ -1,9 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './loginstyle.css'
-import { GoogleLogin } from '@react-oauth/google';
-import { googleLogout } from '@react-oauth/google';
+import { GoogleLogin ,googleLogout} from '@react-oauth/google';
+
+
+
+
 const Login = () => {
  const [Success, setSuccess] = useState(false)
+  const [Logout, setLogout] = useState(false)
+
+  useEffect(() => {
+    googleLogout()
+
+}, [Logout])
   return (
     <div>
         <div class="container box-width shadow-sm pb-5" >
@@ -29,7 +38,7 @@ const Login = () => {
 />;
     </div>
     <div className="col-md-6">
-          <button onClick={()=>googleLogout()}>LogOut</button>
+          <button onClick={()=>setLogout(true)}>LogOut</button>
 
     </div>
 </div>
